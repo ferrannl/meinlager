@@ -161,6 +161,55 @@ li:hover > span {
     color: #000;
 }
 
+/*MENU ITEMS */
+
+.menu > li:first-child > a {
+    background-color: lightblue; /* New background color for the first item */
+    color: black; /* New text color for the first item */
+}
+
+.menu > li:first-child:hover > a {
+    background-color: rgba(60, 138, 193, 0.865); /* Background color on hover */
+    color: white; /* Text color on hover */
+}
+
+.menu > li:nth-child(2) > span {
+    background-color: #f2f277; /* New background color for the second item */
+    color: black; /* New text color for the second item */
+}
+
+.menu > li:nth-child(2):hover > span {
+    background-color: rgba(235, 235, 13, 0.85); /* Background color on hover */
+    color: black; /* Text color on hover */
+}
+
+.menu > li:nth-child(3) > a {
+    background-color: #65e0bdce; /* Background color on hover */
+    color: black; /* New text color for the second item */
+}
+
+.menu > li:nth-child(3):hover > a {
+    background-color: rgba(51, 154, 125, 0.808); /* Background color on hover */
+    color: white; /* Text color on hover */
+}
+
+.menu > li:nth-child(4) > span {
+    background-color: rgba(242, 119, 228, 0.897); /* New background color for the second item */
+    color: black; /* New text color for the second item */
+}
+
+.menu > li:nth-child(4):hover > span {
+    background-color: rgba(233, 33, 209, 0.777); /* Background color on hover */
+    color: white; /* Text color on hover */
+}
+
+/* SUB MENU ITEMS */
+
+.menu > li:nth-child(2):hover > a {
+    color: blueviolet; /* Text color on hover */
+}
+
+
 /* FONT AWESOME */
 
 .menu > li > span > i {
@@ -633,6 +682,178 @@ body, html {
     opacity: 1;
 }
 
+/*LOCATION*/
+.opening-times {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.opening-times h2 {
+    font-size: 24px;
+    text-align: center;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.opening-times ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.opening-times ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.opening-times ul li strong {
+    color: #111;
+}
+
+.opening-times ul li .closed {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.opening-times .note {
+    font-size: 14px;
+    font-style: italic;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.opening-times .contact {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.opening-times .contact strong {
+    font-size: 18px;
+    color: #444;
+}
+
+.opening-times .contact a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.opening-times .contact a:hover {
+    text-decoration: underline;
+}
+
+.opening-times .signature {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.location-section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.location-section h2 {
+    text-align: center;
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.location-section p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.location-advantages {
+    list-style-type: none;
+    padding: 0;
+}
+
+.location-advantages li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    color: #444;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.location-advantages > li:nth-child(1) {
+    border-left: 5px solid #3c8ac1dd;
+   }
+.location-advantages li:nth-child(1) strong {
+    color: #3c8ac1dd;
+    }
+
+.location-advantages > li:nth-child(2) {
+    border-left: 5px solid #dbc537;
+   }
+.location-advantages li:nth-child(2) strong {
+    color: #dbc537;
+    }
+
+    .location-advantages > li:nth-child(3) {
+        border-left: 5px solid #2ed6a6;
+       }
+    .location-advantages li:nth-child(3) strong {
+        color: #2ed6a6;
+        }
+        .location-advantages > li:nth-child(4) {
+            border-left: 5px solid #911086;
+           }
+        .location-advantages li:nth-child(4) strong {
+            color: #911086;
+            }
+.location-advantages li strong {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.location-section a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.location-section a:hover {
+    text-decoration: underline;
+}
+
+.contact {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.email-link {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007BFF; /* Blue color for email */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.email-link:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+
 /* OVER ONS */
 
 .overons {
@@ -827,13 +1048,86 @@ body, html {
     /* CONTACT */
 
     .contact {
-        min-width: 80%;
-        margin-bottom: auto;
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-
-    .contact > form > .naam {
-        flex-direction: row;
+    
+    h1 {
+        font-size: 24px;
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
     }
+    
+    .form-section {
+        margin-bottom: 20px;
+    }
+    
+    label {
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px;
+        display: block;
+    }
+    
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    
+    textarea.form-control {
+        height: 120px;
+        resize: vertical;
+    }
+    
+    .radio-group label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+    
+    .radio-group input {
+        margin-right: 10px;
+    }
+    
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .submit-btn:hover {
+        background-color: #0056b3;
+    }
+    
+    input[type="radio"], input[type="checkbox"] {
+        margin-right: 8px;
+    }
+    
+    input, select, textarea {
+        box-sizing: border-box;
+    }
+    
+    @media (max-width: 768px) {
+        .contact {
+            padding: 15px;
+        }
+    }
+    
 
     /* OVER ONS */
     

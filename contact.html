@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Ferran Hendriks 2130858 en Xia de Visser 2130819" />
+    <meta name="author" content="Ferran Hendriks" />
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Munchkin | Contact</title>
+    <title>Mein Lager | Kontakt</title>
 </head>
 
 <body>
@@ -16,27 +16,29 @@
     <div class="wrapper">
 
         <header class="header">
-            <div class="logo"><a href="index.html"><img src="images/logo-min.png" alt="munchkin logo"></a></div>
+            <div class="logo"><a href="index.html"><img src="images/logo-min.png" alt="lager logo"></a></div>
             <nav>
 
                 <input id="check" type="checkbox">
                 <label for="check" class="menu-handle"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></label>
 
                 <ul class="menu">
-                    <li><a href="index.html">home</a></li>
-                    <li><span>articles <i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                    <li><a href="index.html">Homepage</a></li>
+                    <li><span>Angebot <i class="fa fa-caret-down" aria-hidden="true"></i></span>
                         <ul class="submenu">
-                            <li><a href="page1.html">looks</a></li>
-                            <li><a href="page2.html">history</a></li>
-                            <li><a href="page3.html">mating</a></li>
-                            <li><a href="video.html">video</a></li>
+                            <li><a href="page1.html">Holzboxen</a></li>
+                            <li><a href="page2.html">Container</a></li>
+                            <li><a href="page3.html">Premium Räume</a></li>
+                            <li><a href="page4.html">Premium Container</a></li>
+                            <!-- <li><a href="video.html">video</a></li> -->
                         </ul>
                     </li>
-                    <li><a href="gallery.html">gallery</a></li>
-                    <li><span>social <i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                    <li><a href="gallery.html">Galerie</a></li>
+                    <li><span>Kontakt <i class="fa fa-caret-down" aria-hidden="true"></i></span>
                         <ul class="submenu">
-                            <li><a href="aboutus.html">about us</a></li>
-                            <li><a href="contact.html">contact</a></li>
+                            <!-- <li><a href="aboutus.html">Über uns</a></li> -->
+                            <li><a href="contact.html">Anfordern</a></li>
+                            <li><a href="location.html">Standort</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -46,48 +48,68 @@
         <div class="container">
 
             <div class="contact">
-
-                <h1>
-                    Kontaktieren Sie uns - Das MeinLager Team freut sich auf Sie
-                    </h1>
-
-                <form>
-                    
-                    <p>Name:</p>
-                    <div class="naam">                        
-                        <select>
-                            <option value="man">Mr.</option>
-                            <option value="vrouw">Ms.</option>
+                <h1>Kontaktieren Sie uns
+                    <br>
+                    Das MeinLager Team freut sich auf Sie!</h1>
+                
+                    <form action="https://formsubmit.co/ferranhendriks2@hotmail.com" method="POST">
+                                        <div class="form-section">
+                        <label for="salutation">Anrede:</label>
+                        <select id="salutation" name="salutation" class="form-control">
+                            <option value="man">Herr</option>
+                            <option value="frau">Frau</option>
                         </select>
-
-                        <input class="naambox" name="voornaam" type="text" placeholder="Vorname">
-                        <input class="naambox" name="achternaam" type="text" placeholder="Nachname">
                     </div>
-
-                    <br>
-
-                    <p>E-mailadres:</p>
-                    <input class="emailbox" name="email" type="text" placeholder="E-mailadres">
-                    <br>
-                    <b>Kundenwunsch</b>
-                    <input type="radio" id="option1" name="kundenwunsch" value="angebot">
-                    <label for="option1"> Unverbindliches Angebot anfordern</label>
-                    <input type="radio" id="option2" name="kundenwunsch" value="vorschlag">
-                    <label for="option2"> Besichtigungstermin Vorschlag anfordern</label><br>
-                    
-                    <p>Nachricht:</p>
-                    <textarea name="bericht" class="bericht"> </textarea>
-                    <br>
-                    <input type="submit" value="Schicken" class="submit">
+            
+                    <div class="form-section">
+                        <label for="first-name">Vorname:</label>
+                        <input type="text" id="first-name" name="firstname" class="form-control" placeholder="Vorname" required>
+                    </div>
+            
+                    <div class="form-section">
+                        <label for="last-name">Nachname:</label>
+                        <input type="text" id="last-name" name="lastname" class="form-control" placeholder="Nachname" required>
+                    </div>
+            
+                    <div class="form-section">
+                        <label for="email">E-Mail-Adresse:</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail-Adresse" required>
+                    </div>
+            
+                    <div class="form-section">
+                        <p><strong>Kundenwunsch:</strong></p>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" id="angebot" name="kundenwunsch" value="angebot">
+                                Unverbindliches Angebot anfordern
+                            </label>
+                            <label>
+                                <input type="radio" id="vorschlag" name="kundenwunsch" value="vorschlag">
+                                Besichtigungstermin Vorschlag anfordern
+                            </label>
+                        </div>
+                    </div>
+            
+                    <div class="form-section">
+                        <label for="message">Nachricht:</label>
+                        <textarea id="message" name="bericht" class="form-control" placeholder="Ihre Nachricht..." required></textarea>
+                    </div>
+            
+                    <div class="form-section">
+                        <button type="submit" class="submit-btn">Schicken</button>
+                    </div>
                 </form>
-
             </div>
+            
 
         </div>
 
         <footer class="main-footer">
-            <p><a href="sitemap.html">sitemap</a></p>
-            <p>copyright 2017 &copy; Ferran Hendiks &amp; Xia de Visser</p>
+            <p>
+                <a href="datenschutzerklarung.html">Datenschutzerklärung</a> -
+                <a href="impressum.html">Impressum</a>
+            </p>
+            <p>copyright 2024 &copy; Mein Lager</p>
         </footer>
 
     </div>
