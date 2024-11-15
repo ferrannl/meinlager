@@ -158,8 +158,7 @@
   .menu > li a,
   li > span {
     display: block;
-    padding: 10px;
-  
+    padding: 20px;
     cursor: pointer;
     word-wrap: break-word;
     font-size: 15px;
@@ -227,12 +226,7 @@
     background-color: rgba(233, 33, 209, 0.777); /* Background color on hover */
     color: white; /* Text color on hover */
   }
-  
-  /* SUB MENU ITEMS */
-  
-  .menu > li:nth-child(2):hover > a {
-    color: blueviolet; /* Text color on hover */
-  }
+
   
   /* FONT AWESOME */
   
