@@ -639,7 +639,7 @@ body, html {
     display: block;
 }
     
-.cat{
+.blok{
     border-radius: 10px 10px 10px 10px;
     width: 100%;
     opacity: 1;
@@ -652,7 +652,7 @@ body, html {
     opacity: 1;
 }
 
-.blok:hover > .cat {
+.blok:hover > .blok {
     opacity: 0.3;
 }
 
