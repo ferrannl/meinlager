@@ -274,7 +274,41 @@
     z-index: 0;
     flex: 1;
   }
-  
+
+/* CONTAINER2 */
+
+/* Center the container */
+.container2 {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Styling for the heading */
+.container2 h1 {
+  color: #0056b3;
+  font-size: 2em;
+  margin-bottom: 10px;
+  width: 90%;
+  margin: auto;
+  line-height: 1.8; /* Increases the line spacing for better readability */
+  text-align:center; /* Aligns text evenly along both left and right edges */
+}
+
+/* Styling for paragraphs */
+.container2 p {
+  width: 90%;
+  margin: auto;
+  line-height: 1.8; /* Increases the line spacing for better readability */
+  font-size: 1.4em; /* Slightly larger font size */
+  text-align:center; /* Aligns text evenly along both left and right edges */
+  color: #0c0c0c; /* Softer color for reduced strain on the eyes */
+}
+
   /* INDEX */
   
   .parallax {
@@ -678,6 +712,10 @@
   .text > p {
     width: 90%;
     margin: auto;
+    line-height: 1.8; /* Increases the line spacing for better readability */
+    font-size: 1.4em; /* Slightly larger font size */
+    text-align:center; /* Aligns text evenly along both left and right edges */
+    color: #444; /* Softer color for reduced strain on the eyes */
   }
   
   .text:hover {
@@ -1011,6 +1049,15 @@
     border-top: 1px solid #eee;
     padding: 5px;
   }
+
+  .footer-icon {
+    position: fixed; /* Keeps the icon fixed in one position */
+    bottom: 10px; /* Distance from the bottom of the page */
+    right: 10px; /* Distance from the right side of the page */
+    width: 50px; /* Adjust the size of the icon */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 100; /* Ensure it appears above other elements */
+}
   
   @media screen and (min-width: 480px) {
     /* tablet use */
