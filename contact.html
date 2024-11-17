@@ -108,7 +108,7 @@
 
         </div>
 
-           <!-- Success Message Modal -->
+         <!-- Success Message Modal -->
     <div id="successModal" class="hidden">
         <div class="success-container">
             <h1>Thank You!</h1>
@@ -118,9 +118,10 @@
     </div>
 
     <script>
-        const submitButton = document.getElementById('submitButton');
-        const successModal = document.getElementById('successModal');
-        const countdownElement = document.getElementById('countdown');
+        // JavaScript logic
+        const submitButton = document.getElementById('submitButton'); // Get the button
+        const successModal = document.getElementById('successModal'); // Get the modal
+        const countdownElement = document.getElementById('countdown'); // Countdown element
 
         submitButton.addEventListener('click', () => {
             // Show the success modal
@@ -133,11 +134,12 @@
             const timer = setInterval(() => {
                 countdown--;
                 countdownElement.textContent = countdown;
-                if (countdown === 0) {
-                    clearInterval(timer);
-                    window.location.href = '/meinlager/index.html';
+
+                if (countdown <= 0) {
+                    clearInterval(timer); // Stop the timer
+                    window.location.href = '/index.html'; // Redirect to home page
                 }
-            }, 1000);
+            }, 1000); // Run every 1 second
         });
     </script>
         
