@@ -18,7 +18,6 @@
         <header class="header">
             <div class="logo"><a href="index.html"><img src="images/logo-min.png" alt="lager logo"></a></div>
             <nav>
-
                 <input id="check" type="checkbox">
                 <label for="check" class="menu-handle"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></label>
 
@@ -31,13 +30,11 @@
                             <li><a href="page3.html">Räume</a></li>
                             <li><a href="page4.html">Premium Containers</a></li>
                             <li><a href="page5.html">Alle Lösungen</a></li>
-                            <!-- <li><a href="video.html">video</a></li> -->
                         </ul>
                     </li>
                     <li><a href="gallery.html">Galerie</a></li>
                     <li><span>Kontakt <i class="fa fa-caret-down" aria-hidden="true"></i></span>
                         <ul class="submenu">
-                            <!-- <li><a href="aboutus.html">Über uns</a></li> -->
                             <li><a href="contact.html">Anfordern</a></li>
                             <li><a href="location.html">Standort</a></li>
                         </ul>
@@ -47,36 +44,35 @@
         </header>
 
         <div class="container">
-
             <div class="contact">
                 <h1>Kontaktieren Sie uns
                     <br>
                     Das MeinLager Team freut sich auf Sie!</h1>
-                
-                    <form action="https://formsubmit.co/ferranhendriks2@hotmail.com" method="POST">
-                                        <div class="form-section">
+
+                <form action="https://formsubmit.co/ferranhendriks2@hotmail.com" method="POST" id="contactForm">
+                    <div class="form-section">
                         <label for="salutation">Anrede:</label>
                         <select id="salutation" name="salutation" class="form-control">
                             <option value="man">Herr</option>
                             <option value="frau">Frau</option>
                         </select>
                     </div>
-            
+
                     <div class="form-section">
                         <label for="first-name">Vorname:</label>
                         <input type="text" id="first-name" name="firstname" class="form-control" placeholder="Vorname" required>
                     </div>
-            
+
                     <div class="form-section">
                         <label for="last-name">Nachname:</label>
                         <input type="text" id="last-name" name="lastname" class="form-control" placeholder="Nachname" required>
                     </div>
-            
+
                     <div class="form-section">
                         <label for="email">E-Mail-Adresse:</label>
                         <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail-Adresse" required>
                     </div>
-            
+
                     <div class="form-section">
                         <p><strong>Kundenwunsch:</strong></p>
                         <div class="radio-group">
@@ -90,59 +86,27 @@
                             </label>
                         </div>
                     </div>
-            
+
                     <div class="form-section">
                         <label for="message">Nachricht:</label>
                         <textarea id="message" name="message" class="form-control" placeholder="Ihre Nachricht..." required></textarea>
                     </div>
-            
-                    <div class="form-section">
-                        <button id="submitButton" type="submit" class="submit-btn">Schicken</button>                        
-                    </div>
 
-                
-                        
+                    <div class="form-section">
+                        <button id="submitButton" type="submit" class="submit-btn">Schicken</button>
+                    </div>
                 </form>
             </div>
-      
-
         </div>
 
-         <!-- Success Message Modal -->
-    <div id="successModal" class="hidden">
-        <div class="success-container">
-            <h1>Thank You!</h1>
-            <p>Your form was successfully submitted.</p>
-            <p>Redirecting you to the home page in <span id="countdown">15</span> seconds...</p>
+        <!-- Success Message Modal -->
+        <div id="successModal" class="hidden">
+            <div class="success-container">
+                <h1>Danke!</h1>
+                <p>Ihre Nachricht wurde erfolgreich gesendet.</p>
+                <p>Sie werden in <span id="countdown">15</span> Sekunden zur Startseite weitergeleitet...</p>
+            </div>
         </div>
-    </div>
-
-    <script>
-        // JavaScript logic
-        const submitButton = document.getElementById('submitButton'); // Get the button
-        const successModal = document.getElementById('successModal'); // Get the modal
-        const countdownElement = document.getElementById('countdown'); // Countdown element
-
-        submitButton.addEventListener('click', () => {
-            // Show the success modal
-            successModal.classList.remove('hidden');
-
-            // Start the countdown
-            let countdown = 15;
-            countdownElement.textContent = countdown;
-
-            const timer = setInterval(() => {
-                countdown--;
-                countdownElement.textContent = countdown;
-
-                if (countdown <= 0) {
-                    clearInterval(timer); // Stop the timer
-                    window.location.href = '/index.html'; // Redirect to home page
-                }
-            }, 1000); // Run every 1 second
-        });
-    </script>
-        
 
         <footer class="main-footer">
             <p>
@@ -153,7 +117,8 @@
         </footer>
 
     </div>
-           
+
+    <script src="script.js"></script>
 </body>
 
 </html>
