@@ -1,4 +1,6 @@
-# Mein Lager Website ![Company Logo](./images/logo-min.png "Mein Lager Logo")
+![Company Logo](./images/logo-min.png "Mein Lager Logo")
+
+# Mein Lager Website
 
 Welcome to the **Mein Lager** website repository. This website represents our company, **Mein Lager**, providing detailed information about our services, contact details, and more.
 
