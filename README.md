@@ -1,4 +1,4 @@
-# Mein Lager Website
+# Mein Lager Website ![Alt text]([https://assets.digitalocean.com/articles/alligator/boo.svg](https://github.com/ferrannl/meinlager/blob/main/images/logo-min.png) "logo")
 
 Welcome to the **Mein Lager** website repository. This website represents our company, **Mein Lager**, providing detailed information about our services, contact details, and more.
 
