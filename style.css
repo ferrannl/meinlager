@@ -48,6 +48,10 @@ a:hover {
   color: peachpuff;
 }
 
+span {
+  user-select: none; /* Disable text selection */
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
