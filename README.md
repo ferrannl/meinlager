@@ -65,6 +65,6 @@ This website and its contents, including but not limited to text, graphics, logo
 
 Visit our website: [Mein Lager](https://meinlager.org/)
 
-For inquiries regarding permissions or licensing, please contact us at:  
+For inquiries, please contact us at:  
 **Email**: [info@meinlager.org](mailto:info@meinlager.org)  
 **Phone**: 069 95418900
