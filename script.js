@@ -1,61 +1,101 @@
-// --- HAMBURGER + SUBMENU FIXES ---
+// ==========================
+// NAV (hamburger + submenus)
+// ==========================
+(function () {
+  const navToggle = document.getElementById("navToggle");
+  const navMenu = document.getElementById("navMenu");
 
-const menuCheckbox = document.getElementById("check");
-const menu = document.getElementById("mainMenu");
-const toggles = document.querySelectorAll(".menu-toggle");
+  function closeNav() {
+    document.body.classList.remove("nav-open");
+    if (navToggle) navToggle.setAttribute("aria-expanded", "false");
+  }
 
-// Helper: close all submenus
-function closeAllSubmenus() {
-  document.querySelectorAll(".has-submenu").forEach((li) => {
-    li.classList.remove("open");
-    const btn = li.querySelector(".menu-toggle");
-    if (btn) btn.setAttribute("aria-expanded", "false");
+  function toggleNav() {
+    const isOpen = document.body.classList.toggle("nav-open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  }
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener("click", toggleNav);
+
+    // Close when clicking any normal link (mobile UX)
+    navMenu.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (link) closeNav();
+    });
+
+    // Close on ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeNav();
+    });
+
+    // Close if you click outside the menu (mobile)
+    document.addEventListener("click", (e) => {
+      if (!document.body.classList.contains("nav-open")) return;
+      const clickedInsideNav = e.target.closest(".nav") || e.target.closest(".menu");
+      if (!clickedInsideNav && !e.target.closest("#navToggle")) closeNav();
+    });
+  }
+
+  // Submenu toggles for mobile (and also works on desktop click)
+  const submenuButtons = document.querySelectorAll(".submenu-toggle");
+  submenuButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const li = btn.closest(".has-submenu");
+      if (!li) return;
+
+      const isOpen = li.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(isOpen));
+
+      // Optional: close other submenus on mobile for neatness
+      submenuButtons.forEach((otherBtn) => {
+        if (otherBtn === btn) return;
+        const otherLi = otherBtn.closest(".has-submenu");
+        if (otherLi) {
+          otherLi.classList.remove("open");
+          otherBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
   });
-}
 
-// Toggle submenu on click (mobile behavior)
-toggles.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    // On wide screens we let CSS hover handle it
-    if (window.matchMedia("(min-width: 700px)").matches) return;
-
-    const parent = btn.closest(".has-submenu");
-    const isOpen = parent.classList.contains("open");
-
-    closeAllSubmenus();
-    parent.classList.toggle("open", !isOpen);
-    btn.setAttribute("aria-expanded", String(!isOpen));
+  // If window is resized to desktop, ensure menu panel isn't stuck "open"
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1024) {
+      // Keep body.nav-open harmless, but you can close it:
+      closeNav();
+    }
   });
-});
+})();
 
-// Close hamburger menu when clicking a link
-menu.addEventListener("click", (e) => {
-  const a = e.target.closest("a");
-  if (!a) return;
 
-  // close mobile menu
-  if (!window.matchMedia("(min-width: 700px)").matches) {
-    menuCheckbox.checked = false;
-    closeAllSubmenus();
-  }
-});
+// ===================================
+// CONTACT FORM SUCCESS MODAL (yours)
+// (runs only if the elements exist)
+// ===================================
+(function () {
+  const form = document.getElementById("contactForm");
+  const successModal = document.getElementById("successModal");
+  const countdownElement = document.getElementById("countdown");
 
-// Clicking outside menu closes it (mobile)
-document.addEventListener("click", (e) => {
-  if (window.matchMedia("(min-width: 700px)").matches) return;
+  if (!form || !successModal || !countdownElement) return;
 
-  const nav = e.target.closest(".nav");
-  if (!nav && menuCheckbox.checked) {
-    menuCheckbox.checked = false;
-    closeAllSubmenus();
-  }
-});
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-// When switching to desktop/tablet, clean mobile states
-window.addEventListener("resize", () => {
-  if (window.matchMedia("(min-width: 700px)").matches) {
-    // ensure checkbox doesn't keep menu "stuck"
-    menuCheckbox.checked = false;
-    closeAllSubmenus();
-  }
-});
+    successModal.classList.remove("hidden");
+
+    let countdown = 15;
+    countdownElement.textContent = countdown;
+
+    const timer = setInterval(() => {
+      countdown--;
+      countdownElement.textContent = countdown;
+
+      if (countdown <= 0) {
+        clearInterval(timer);
+        window.location.href = "index.html";
+      }
+    }, 1000);
+  });
+})();
