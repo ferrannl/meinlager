@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +7,7 @@
   <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <title>Mein Lager | Galerie</title>
+  <title>Mein Lager | Kontakt</title>
 </head>
 
 <body>
@@ -40,7 +39,7 @@
             </ul>
           </li>
 
-          <li><a href="gallery.html" aria-current="page">Galerie</a></li>
+          <li><a href="gallery.html">Galerie</a></li>
 
           <li class="has-submenu">
             <button class="menu-toggle" type="button" aria-expanded="false">
@@ -55,34 +54,74 @@
       </nav>
     </header>
 
-    <main class="content" aria-label="Galerie">
-      <!-- Keep your existing classes so your CSS still applies -->
-      <section class="storage-container">
-        <h1>Ein Blick in unsere Lager</h1>
+    <!-- Main content (uses the new layout + background from style.css) -->
+    <main class="content">
+      <section class="contact">
+        <h1>
+          Kontaktieren Sie uns<br />
+          Das MeinLager Team freut sich auf Sie!
+        </h1>
 
-        <div class="storage-grid">
-          <!-- Lager -->
-          <img src="images/lager4.jpg" alt="Building New" loading="lazy" />
-          <img src="images/lager5.jpg" alt="Postal Unit" loading="lazy" />
-          <img src="images/lager1.png" alt="Building Old" loading="lazy" />
-          <img src="images/lager0.jpg" alt="Building Banner" loading="lazy" />
+        <!-- If you want to actually send emails later, you can restore your formsubmit action -->
+        <!-- <form action="https://formsubmit.co/YOUR@EMAIL.COM" method="POST" id="contactForm"> -->
+        <form id="contactForm">
+          <div class="form-section">
+            <label for="salutation">Anrede:</label>
+            <select id="salutation" name="salutation" class="form-control">
+              <option value="man">Herr</option>
+              <option value="frau">Frau</option>
+            </select>
+          </div>
 
-          <!-- Containers -->
-          <img src="images/lager6.jpg" alt="Storage Unit Image 6" loading="lazy" />
-          <img src="images/lager7.jpg" alt="Storage Unit Image 7" loading="lazy" />
-          <img src="images/lager8.jpg" alt="Storage Unit Image 8" loading="lazy" />
-          <img src="images/lager14.jpg" alt="Storage Unit Image 14" loading="lazy" />
-          <img src="images/lager13.png" alt="Storage Unit Image 13" loading="lazy" />
+          <div class="form-section">
+            <label for="first-name">Vorname:</label>
+            <input type="text" id="first-name" name="firstname" class="form-control" placeholder="Vorname" required />
+          </div>
 
-          <!-- Holz Boxen -->
-          <img src="images/lager2.png" alt="Storage Unit Image 2" loading="lazy" />
-          <img src="images/lager3.jpg" alt="Storage Unit Image 3" loading="lazy" />
-          <img src="images/lager10.jpg" alt="Storage Unit Image 10" loading="lazy" />
+          <div class="form-section">
+            <label for="last-name">Nachname:</label>
+            <input type="text" id="last-name" name="lastname" class="form-control" placeholder="Nachname" required />
+          </div>
 
-          <!-- <img src="images/lager9.png" alt="Storage Unit Image 9" loading="lazy" /> -->
-        </div>
+          <div class="form-section">
+            <label for="email">E-Mail-Adresse:</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail-Adresse" required />
+          </div>
+
+          <div class="form-section">
+            <p><strong>Kundenwunsch:</strong></p>
+            <div class="radio-group">
+              <label>
+                <input type="radio" id="angebot" name="kundenwunsch" value="angebot" required />
+                Unverbindliches Angebot anfordern
+              </label>
+              <label>
+                <input type="radio" id="vorschlag" name="kundenwunsch" value="vorschlag" required />
+                Besichtigungstermin Vorschlag anfordern
+              </label>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <label for="message">Nachricht:</label>
+            <textarea id="message" name="message" class="form-control" placeholder="Ihre Nachricht..." required></textarea>
+          </div>
+
+          <div class="form-section">
+            <button id="submitButton" type="submit" class="submit-btn">Schicken</button>
+          </div>
+        </form>
       </section>
     </main>
+
+    <!-- Success Message Modal (works with your existing JS countdown script) -->
+    <div id="successModal" class="hidden" role="dialog" aria-modal="true" aria-label="Erfolg">
+      <div class="success-container">
+        <h1>Danke!</h1>
+        <p>Ihre Nachricht wurde erfolgreich gesendet.</p>
+        <p>Sie werden in <span id="countdown">15</span> Sekunden zur Startseite weitergeleitet...</p>
+      </div>
+    </div>
 
     <footer class="main-footer">
       <p>
@@ -95,5 +134,4 @@
 
   <script src="script.js"></script>
 </body>
-
 </html>
