@@ -1,90 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Ferran Hendriks" />
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Mein Lager | Galerie</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Ferran Hendriks" />
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>Mein Lager | Galerie</title>
 </head>
 
 <body>
+  <div class="wrapper">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo-min.png" alt="lager logo" /></a>
+      </div>
 
-    <div class="wrapper">
+      <nav class="nav">
+        <input id="check" type="checkbox" aria-label="Toggle menu" />
+        <label for="check" class="menu-handle" aria-label="Open menu" role="button" tabindex="0">
+          <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+        </label>
 
-        <header class="header">
-            <div class="logo"><a href="index.html"><img src="images/logo-min.png" alt="lager logo"></a></div>
-            <nav>
+        <ul class="menu" id="mainMenu">
+          <li><a href="home.html">Homepage</a></li>
 
-                <input id="check" type="checkbox">
-                <label for="check" class="menu-handle"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></label>
+          <li class="has-submenu">
+            <button class="menu-toggle" type="button" aria-expanded="false">
+              Angebot <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <ul class="submenu">
+              <li><a href="page1.html">Holzboxen</a></li>
+              <li><a href="page2.html">Containers</a></li>
+              <li><a href="page3.html">Räume</a></li>
+              <li><a href="page4.html">Premium Containers</a></li>
+              <li><a href="page5.html">Alle Lösungen</a></li>
+            </ul>
+          </li>
 
-                <ul class="menu">
-                    <li><a href="home.html">Homepage</a></li>
-                    <li><span>Angebot <i class="fa fa-caret-down" aria-hidden="true"></i></span>
-                        <ul class="submenu">
-                            <li><a href="page1.html">Holzboxen</a></li>
-                            <li><a href="page2.html">Containers</a></li>
-                            <li><a href="page3.html">Räume</a></li>
-                            <li><a href="page4.html">Premium Containers</a></li>
-                            <li><a href="page5.html">Alle Lösungen</a></li>
-                            <!-- <li><a href="video.html">video</a></li> -->
-                        </ul>
-                    </li>
-                    <li><a href="gallery.html">Galerie</a></li>
-                    <li><span>Kontakt <i class="fa fa-caret-down" aria-hidden="true"></i></span>
-                        <ul class="submenu">
-                            <!-- <li><a href="aboutus.html">Über uns</a></li> -->
-                            <li><a href="contact.html">Anfordern</a></li>
-                            <li><a href="location.html">Standort</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+          <li>
+            <a href="gallery.html" aria-current="page">Galerie</a>
+          </li>
 
-            <div class="storage-container">
-                <h1>Ein Blick in unsere Lager</h1>
-                <div class="storage-grid">
+          <li class="has-submenu">
+            <button class="menu-toggle" type="button" aria-expanded="false">
+              Kontakt <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <ul class="submenu">
+              <li><a href="contact.html">Anfordern</a></li>
+              <li><a href="location.html">Standort</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-                    <!--Lager -->
-                    <img src="images/lager4.jpg" alt="Building New">
-                    <img src="images/lager5.jpg" alt="Postal Unit">
-                    <img src="images/lager1.png" alt="Building Old">
-                    <img src="images/lager0.jpg" alt="Building Banner">
+    <!-- MAIN CONTENT -->
+    <main class="content" aria-label="Galerie">
+      <section class="storage-container">
+        <h1>Ein Blick in unsere Lager</h1>
 
+        <div class="storage-grid">
+          <!-- Lager -->
+          <img src="images/lager4.jpg" alt="Lagergebäude neu" loading="lazy" />
+          <img src="images/lager5.jpg" alt="Posteinheit" loading="lazy" />
+          <img src="images/lager1.png" alt="Lagergebäude alt" loading="lazy" />
+          <img src="images/lager0.jpg" alt="Lager Banner" loading="lazy" />
 
+          <!-- Containers -->
+          <img src="images/lager6.jpg" alt="Container Lager 1" loading="lazy" />
+          <img src="images/lager7.jpg" alt="Container Lager 2" loading="lazy" />
+          <img src="images/lager8.jpg" alt="Container Lager 3" loading="lazy" />
+          <img src="images/lager14.jpg" alt="Container Lager 4" loading="lazy" />
+          <img src="images/lager13.png" alt="Container Lager 5" loading="lazy" />
 
-                    <!--Containers -->
-                    <img src="images/lager6.jpg" alt="Storage Unit Image 6">
-                    <img src="images/lager7.jpg" alt="Storage Unit Image 7">
-                    <img src="images/lager8.jpg" alt="Storage Unit Image 8">
-                    <img src="images/lager14.jpg" alt="Storage Unit Image 14">
-                    <img src="images/lager13.png" alt="Storage Unit Image 13">
+          <!-- Holzboxen -->
+          <img src="images/lager2.png" alt="Holzbox Lager 1" loading="lazy" />
+          <img src="images/lager3.jpg" alt="Holzbox Lager 2" loading="lazy" />
+          <img src="images/lager10.jpg" alt="Holzbox Lager 3" loading="lazy" />
+        </div>
+      </section>
+    </main>
 
-                    <!--Holz Boxen -->
-                    <img src="images/lager2.png" alt="Storage Unit Image 2">
-                    <img src="images/lager3.jpg" alt="Storage Unit Image 3">
-                    <img src="images/lager10.jpg" alt="Storage Unit Image 10">
-
-                   <!--  <img src="images/lager9.png" alt="Storage Unit Image 9"> -->
-
-                    <!-- Add more images as needed -->
-            </div>
-    </div>
+    <!-- FOOTER -->
     <footer class="main-footer">
-        <p>
-            <a href="datenschutzerklarung.html">Datenschutzerklärung</a> -
-            <a href="impressum.html">Impressum</a>
-        </p>
-        <p>copyright 2024 &copy; Mein Lager</p>
+      <p>
+        <a href="datenschutzerklarung.html">Datenschutzerklärung</a> -
+        <a href="impressum.html">Impressum</a>
+      </p>
+      <p>copyright 2024 &copy; Mein Lager</p>
     </footer>
+  </div>
 
-    </div>
-
+  <script src="script.js"></script>
 </body>
 
 </html>
