@@ -1,78 +1,110 @@
-// ==========================
-// NAV (hamburger + submenus)
-// ==========================
+// NAV: hamburger + submenu toggle (no horizontal scroll, closes properly)
 (function () {
-  const navToggle = document.getElementById("navToggle");
-  const navMenu = document.getElementById("navMenu");
+  const menuToggle = document.querySelector(".menu-toggle");
+  const menu = document.getElementById("mainMenu");
+  const submenuParents = document.querySelectorAll(".has-submenu");
 
-  function closeNav() {
-    document.body.classList.remove("nav-open");
-    if (navToggle) navToggle.setAttribute("aria-expanded", "false");
-  }
-
-  function toggleNav() {
-    const isOpen = document.body.classList.toggle("nav-open");
-    navToggle.setAttribute("aria-expanded", String(isOpen));
-  }
-
-  if (navToggle && navMenu) {
-    navToggle.addEventListener("click", toggleNav);
-
-    // Close when clicking any normal link (mobile UX)
-    navMenu.addEventListener("click", (e) => {
-      const link = e.target.closest("a");
-      if (link) closeNav();
-    });
-
-    // Close on ESC
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeNav();
-    });
-
-    // Close if you click outside the menu (mobile)
-    document.addEventListener("click", (e) => {
-      if (!document.body.classList.contains("nav-open")) return;
-      const clickedInsideNav = e.target.closest(".nav") || e.target.closest(".menu");
-      if (!clickedInsideNav && !e.target.closest("#navToggle")) closeNav();
+  function closeAllSubmenus(except = null) {
+    submenuParents.forEach((li) => {
+      if (except && li === except) return;
+      li.classList.remove("is-open");
+      const btn = li.querySelector(".submenu-toggle");
+      if (btn) btn.setAttribute("aria-expanded", "false");
     });
   }
 
-  // Submenu toggles for mobile (and also works on desktop click)
-  const submenuButtons = document.querySelectorAll(".submenu-toggle");
-  submenuButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const li = btn.closest(".has-submenu");
-      if (!li) return;
+  function closeMenu() {
+    if (!menu) return;
+    menu.classList.remove("is-open");
+    if (menuToggle) menuToggle.setAttribute("aria-expanded", "false");
+    closeAllSubmenus();
+  }
 
-      const isOpen = li.classList.toggle("open");
+  function toggleMenu() {
+    const isOpen = menu.classList.toggle("is-open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    if (!isOpen) closeAllSubmenus();
+  }
+
+  // Main hamburger toggle
+  if (menuToggle && menu) {
+    menuToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+  }
+
+  // Submenu toggle (click again closes)
+  submenuParents.forEach((li) => {
+    const btn = li.querySelector(".submenu-toggle");
+    if (!btn) return;
+
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const isOpen = li.classList.toggle("is-open");
       btn.setAttribute("aria-expanded", String(isOpen));
 
-      // Optional: close other submenus on mobile for neatness
-      submenuButtons.forEach((otherBtn) => {
-        if (otherBtn === btn) return;
-        const otherLi = otherBtn.closest(".has-submenu");
-        if (otherLi) {
-          otherLi.classList.remove("open");
-          otherBtn.setAttribute("aria-expanded", "false");
-        }
-      });
+      // close other submenus
+      if (isOpen) closeAllSubmenus(li);
     });
   });
 
-  // If window is resized to desktop, ensure menu panel isn't stuck "open"
+  // Close menu when clicking a normal link (mobile UX)
+  document.querySelectorAll(".menu a").forEach((a) => {
+    a.addEventListener("click", () => {
+      // only auto-close if hamburger exists (mobile)
+      if (window.matchMedia("(max-width: 767px)").matches) closeMenu();
+    });
+  });
+
+  // Click outside closes menu (mobile)
+  document.addEventListener("click", (e) => {
+    if (!menu || !menuToggle) return;
+
+    const clickedInsideMenu = menu.contains(e.target);
+    const clickedToggle = menuToggle.contains(e.target);
+
+    if (!clickedInsideMenu && !clickedToggle) closeMenu();
+  });
+
+  // ESC closes menu
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  // Desktop: open dropdown on hover as well (nice UX)
+  submenuParents.forEach((li) => {
+    li.addEventListener("mouseenter", () => {
+      if (window.matchMedia("(min-width: 768px)").matches) {
+        li.classList.add("is-open");
+        const btn = li.querySelector(".submenu-toggle");
+        if (btn) btn.setAttribute("aria-expanded", "true");
+      }
+    });
+
+    li.addEventListener("mouseleave", () => {
+      if (window.matchMedia("(min-width: 768px)").matches) {
+        li.classList.remove("is-open");
+        const btn = li.querySelector(".submenu-toggle");
+        if (btn) btn.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+
+  // When resizing to desktop, ensure menu is visible and not stuck in mobile-open state
   window.addEventListener("resize", () => {
-    if (window.innerWidth >= 1024) {
-      // Keep body.nav-open harmless, but you can close it:
-      closeNav();
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      menu.classList.remove("is-open");
+      if (menuToggle) menuToggle.setAttribute("aria-expanded", "false");
+      closeAllSubmenus();
     }
   });
 })();
 
-
-// ===================================
-// CONTACT FORM SUCCESS MODAL (yours)
-// (runs only if the elements exist)
-// ===================================
+// Your contact form script can stay separate on contact.html,
+// but if you include it here too, it won't break anything if the elements don't exist.
 (function () {
   const form = document.getElementById("contactForm");
   const successModal = document.getElementById("successModal");
@@ -82,7 +114,6 @@
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
-
     successModal.classList.remove("hidden");
 
     let countdown = 15;
