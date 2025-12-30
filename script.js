@@ -1,91 +1,32 @@
-/* =========================
-   CONTACT FORM (your existing logic, safe-guarded)
-========================= */
-(() => {
-  const form = document.getElementById("contactForm");
-  const successModal = document.getElementById("successModal");
-  const countdownElement = document.getElementById("countdown");
-
-  if (form && successModal && countdownElement) {
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-      successModal.classList.remove("hidden");
-
-      let countdown = 15;
-      countdownElement.textContent = countdown;
-
-      const timer = setInterval(() => {
-        countdown--;
-        countdownElement.textContent = countdown;
-
-        if (countdown <= 0) {
-          clearInterval(timer);
-          window.location.href = "index.html";
-        }
-      }, 1000);
-    });
-  }
-})();
-
-/* =========================
-   NAV MENU FIXES
-   - hamburger toggles open/close
-   - submenu toggles by click on mobile
-   - clicking a link closes menu
-   - prevents horizontal overflow
-========================= */
-(() => {
+document.addEventListener("DOMContentLoaded", () => {
   const toggleBtn = document.querySelector(".menu-toggle");
   const menu = document.querySelector(".menu");
+
   if (!toggleBtn || !menu) return;
 
-  const closeMenu = () => {
-    menu.classList.remove("open");
-    toggleBtn.setAttribute("aria-expanded", "false");
-  };
-
-  const openMenu = () => {
-    menu.classList.add("open");
-    toggleBtn.setAttribute("aria-expanded", "true");
-  };
-
   toggleBtn.addEventListener("click", () => {
-    const isOpen = menu.classList.contains("open");
-    if (isOpen) closeMenu();
-    else openMenu();
+    menu.classList.toggle("open");
   });
 
-  // Close when clicking any normal link
+  // close menu when clicking a link
   menu.addEventListener("click", (e) => {
-    const link = e.target.closest("a");
-    if (link) closeMenu();
+    if (e.target.tagName === "A") {
+      menu.classList.remove("open");
+    }
   });
 
-  // Submenu toggles (mobile)
-  const submenuToggles = menu.querySelectorAll(".submenu-toggle");
-  submenuToggles.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      const submenu = btn.parentElement.querySelector(".submenu");
-      if (!submenu) return;
-
-      const isOpen = submenu.classList.contains("open");
-      submenu.classList.toggle("open", !isOpen);
-      btn.setAttribute("aria-expanded", String(!isOpen));
+  // mobile submenu toggles
+  document.querySelectorAll(".submenu-toggle").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const submenu = btn.nextElementSibling;
+      submenu.classList.toggle("open");
     });
   });
 
-  // Close menu when resizing to desktop
-  const mq = window.matchMedia("(min-width: 900px)");
-  mq.addEventListener("change", () => closeMenu());
-
-  // Click outside closes menu (mobile)
-  document.addEventListener("click", (e) => {
-    const isOpen = menu.classList.contains("open");
-    if (!isOpen) return;
-
-    const clickInsideNav = e.target.closest("header.header");
-    if (!clickInsideNav) closeMenu();
+  // close menu on resize to desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 900) {
+      menu.classList.remove("open");
+    }
   });
-})();
+});
