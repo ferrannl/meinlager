@@ -11,138 +11,138 @@
 </head>
 
 <body>
-  <!-- KEEP PARALLAX -->
-  <section class="parallax">
-    <img src="images/logo-min.png" alt="lager logo" />
-    <h1>
-      <hr />
-      Wir schaffen Platz !
-    </h1>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <img class="hero-logo" src="images/logo-min.png" alt="lager logo" />
+      <h1>
+        <span class="hero-line"></span>
+        Wir schaffen Platz !
+      </h1>
+    </div>
   </section>
 
   <div class="wrapper">
-    <header class="header">
+    <!-- HEADER -->
+    <header class="header" role="banner">
       <div class="logo">
-        <a href="index.html"><img src="images/logo-min.png" alt="lager logo" /></a>
+        <a href="index.html" aria-label="Home">
+          <img src="images/logo-min.png" alt="lager logo" />
+        </a>
       </div>
 
-      <nav class="nav" aria-label="Primary">
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">
+      <nav class="nav" aria-label="Main navigation">
+        <input id="check" type="checkbox" aria-hidden="true" />
+        <label for="check" class="menu-handle" aria-label="Open menu" role="button">
           <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-          <span class="sr-only">Menu</span>
-        </button>
+        </label>
 
-        <div class="nav-panel" id="menu">
-          <ul class="menu">
-            <li class="menu-item">
-              <a href="home.html">Homepage</a>
-            </li>
+        <ul class="menu" id="mainMenu">
+          <li><a href="home.html">Homepage</a></li>
 
-            <li class="menu-item has-submenu">
-              <button class="submenu-toggle" type="button" aria-expanded="false">
-                Angebot <i class="fa fa-caret-down" aria-hidden="true"></i>
-              </button>
-              <ul class="submenu">
-                <li><a href="page1.html">Holzboxen</a></li>
-                <li><a href="page2.html">Containers</a></li>
-                <li><a href="page3.html">Räume</a></li>
-                <li><a href="page4.html">Premium Containers</a></li>
-                <li><a href="page5.html">Alle Lösungen</a></li>
-              </ul>
-            </li>
+          <li class="has-submenu">
+            <button class="menu-btn" type="button" aria-expanded="false">
+              Angebot <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <ul class="submenu">
+              <li><a href="page1.html">Holzboxen</a></li>
+              <li><a href="page2.html">Containers</a></li>
+              <li><a href="page3.html">Räume</a></li>
+              <li><a href="page4.html">Premium Containers</a></li>
+              <li><a href="page5.html">Alle Lösungen</a></li>
+            </ul>
+          </li>
 
-            <li class="menu-item">
-              <a href="gallery.html">Galerie</a>
-            </li>
+          <li><a href="gallery.html">Galerie</a></li>
 
-            <li class="menu-item has-submenu">
-              <button class="submenu-toggle" type="button" aria-expanded="false">
-                Kontakt <i class="fa fa-caret-down" aria-hidden="true"></i>
-              </button>
-              <ul class="submenu">
-                <li><a href="contact.html">Anfordern</a></li>
-                <li><a href="location.html">Standort</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-
-        <!-- backdrop for mobile -->
-        <div class="nav-backdrop" hidden></div>
+          <li class="has-submenu">
+            <button class="menu-btn" type="button" aria-expanded="false">
+              Kontakt <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <ul class="submenu">
+              <li><a href="contact.html">Anfordern</a></li>
+              <li><a href="location.html">Standort</a></li>
+            </ul>
+          </li>
+        </ul>
       </nav>
     </header>
 
-    <main class="content">
-      <aside class="info">
-        <img src="images/notice.jpg" alt="notice" />
+    <!-- MAIN LAYOUT -->
+    <main class="layout">
+      <aside class="info card">
+        <img src="images/notice.jpg" alt="Notice" />
 
         <div class="notice">
           <div>Bitte beachten Sie unsere neuen Öffnungszeiten</div>
-          <div>&nbsp;</div>
+          <div class="spacer"></div>
           <div><b>ab dem 01.12.2024</b></div>
-          <div>&nbsp;</div>
+          <div class="spacer"></div>
           <div><b>Montags – Freitags</b></div>
-          <div><b>08:30 -17:00</b></div>
-          <div>&nbsp;</div>
+          <div><b>08:30 - 17:00</b></div>
+          <div class="spacer"></div>
           <div>Samstags</div>
-          <div>09:00 -15:00</div>
+          <div>09:00 - 15:00</div>
         </div>
 
-        <br />
-        <a href="location.html">Klicken Sie hier für weitere Informationen über uns!</a>
+        <a class="cta-link" href="location.html">Klicken Sie hier für weitere Informationen über uns!</a>
       </aside>
 
-      <section class="cards" aria-label="Highlights">
-        <article class="card">
-          <div class="card__overlay">
-            <p>
-              Günstig, flexibel und schnell. Auch bei individuellen Wünschen stehen wir Ihnen gerne mit Rat und Tat zur Seite.
-              Nutzen Sie unsere umfangreichen Lösungen und profitieren Sie von unseren vielseitigen Serviceleistungen!
-            </p>
-          </div>
-          <img class="card__img" src="images/bild4.png" alt="Bild4" loading="lazy" />
-        </article>
+      <section class="content">
+        <!-- CARDS -->
+        <div class="cards">
+          <article class="card card--blue">
+            <img src="images/bild4.png" alt="Bild4" />
+            <div class="card-overlay">
+              <p>
+                Günstig, flexibel und schnell. Auch bei individuellen Wünschen stehen wir Ihnen gerne mit Rat und Tat zur Seite.
+                Nutzen Sie unsere umfangreichen Lösungen und profitieren Sie von unseren vielseitigen Serviceleistungen!
+              </p>
+            </div>
+          </article>
 
-        <article class="card">
-          <div class="card__overlay">
-            <p>
-              Unsere Einrichtung ist kameraüberwacht und nach neusten technischen Standards alarmgesichert.
-              Gerne können Sie sich vor Ort einen Endruck davon verschaffen.
-            </p>
-          </div>
-          <img class="card__img" src="images/bild3.png" alt="Bild3" loading="lazy" />
-        </article>
+          <article class="card card--yellow">
+            <img src="images/bild3.png" alt="Bild3" />
+            <div class="card-overlay">
+              <p>
+                Unsere Einrichtung ist kameraüberwacht und nach neusten technischen Standards alarmgesichert.
+                Gerne können Sie sich vor Ort einen Endruck davon verschaffen.
+              </p>
+            </div>
+          </article>
 
-        <article class="card">
-          <div class="card__overlay">
-            <p>
-              Ihr Hab und Gut wird bei uns sicher nach neusten VdS Standard gelagert. Zudem stellen wir sicher, daß Ihre Güter
-              trocken, sowie frostfrei gelagert sind.
-            </p>
-          </div>
-          <img class="card__img" src="images/bild2.png" alt="Bild2" loading="lazy" />
-        </article>
+          <article class="card card--mint">
+            <img src="images/bild2.png" alt="Bild2" />
+            <div class="card-overlay">
+              <p>
+                Ihr Hab und Gut wird bei uns sicher nach neusten VdS Standard gelagert. Zudem stellen wir sicher, daß Ihre Güter
+                trocken, sowie frostfrei gelagert sind.
+              </p>
+            </div>
+          </article>
 
-        <article class="card">
-          <div class="card__overlay">
-            <p>
-              Unser Selfstorage Angebot ist eine kostengünstige und bequeme Lösung, Möbel, Hausrat und Eigentum sicher und trocken
-              einzulagern und sich dadurch wieder Platz zu verschaffen.
-            </p>
-          </div>
-          <img class="card__img" src="images/bild1.png" alt="Bild1" loading="lazy" />
-        </article>
+          <article class="card card--pink">
+            <img src="images/bild1.png" alt="Bild1" />
+            <div class="card-overlay">
+              <p>
+                Unser Selfstorage Angebot ist eine kostengünstige und bequeme Lösung, Möbel, Hausrat und Eigentum sicher und trocken
+                einzulagern und sich dadurch wieder Platz zu verschaffen.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <!-- TEXT BLOCK -->
+        <section class="container2">
+          <h1>Benötigen Sie Lagerraum oder Lagerfläche?</h1>
+          <p>Den können Sie bei uns einfach mieten.</p>
+          <p>
+            Wir bieten schnelle Abhilfe bei Platzproblemen! Für private oder gewerbliche Kunden,
+            haben wir den passenden Lagerraum oder Lagerfläche.
+          </p>
+        </section>
       </section>
     </main>
-
-    <section class="container2">
-      <h1>Benötigen Sie Lagerraum oder Lagerfläche?</h1>
-      <p>Den können Sie bei uns einfach mieten.</p>
-      <p>
-        Wir bieten schnelle Abhilfe bei Platzproblemen! Für private oder gewerbliche Kunden,
-        haben wir den passenden Lagerraum oder Lagerfläche.
-      </p>
-    </section>
 
     <footer class="main-footer">
       <p>
