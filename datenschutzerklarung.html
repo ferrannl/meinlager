@@ -1,58 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Ferran Hendriks" />
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Mein Lager | Datenschutzerklärung</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Ferran Hendriks" />
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>Mein Lager | Datenschutzerklärung</title>
 </head>
 
 <body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo-min.png" alt="lager logo" /></a>
+      </div>
 
-    <div class="wrapper">
+      <nav class="nav">
+        <input id="check" type="checkbox" aria-label="Toggle menu" />
+        <label for="check" class="menu-handle" aria-label="Open menu" role="button" tabindex="0">
+          <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+        </label>
 
-        <header class="header">
-            <div class="logo"><a href="index.html"><img src="images/logo-min.png" alt="lager logo"></a></div>
-            <nav>
+        <ul class="menu" id="mainMenu">
+          <li><a href="home.html">Homepage</a></li>
 
-                <input id="check" type="checkbox">
-                <label for="check" class="menu-handle"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></label>
+          <li class="has-submenu">
+            <button class="menu-toggle" type="button" aria-expanded="false">
+              Angebot <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <ul class="submenu">
+              <li><a href="page1.html">Holzboxen</a></li>
+              <li><a href="page2.html">Containers</a></li>
+              <li><a href="page3.html">Räume</a></li>
+              <li><a href="page4.html">Premium Containers</a></li>
+              <li><a href="page5.html">Alle Lösungen</a></li>
+            </ul>
+          </li>
 
-                <ul class="menu">
-                    <li><a href="home.html">Homepage</a></li>
-                    <li><span>Angebot <i class="fa fa-caret-down" aria-hidden="true"></i></span>
-                        <ul class="submenu">
-                            <li><a href="page1.html">Holzboxen</a></li>
-                            <li><a href="page2.html">Containers</a></li>
-                            <li><a href="page3.html">Räume</a></li>
-                            <li><a href="page4.html">Premium Containers</a></li>
-                            <li><a href="page5.html">Alle Lösungen</a></li>
-                            <!-- <li><a href="video.html">video</a></li> -->
-                        </ul>
-                    </li>
-                    <li><a href="gallery.html">Galerie</a></li>
-                    <li><span>Kontakt <i class="fa fa-caret-down" aria-hidden="true"></i></span>
-                        <ul class="submenu">
-                            <!-- <li><a href="aboutus.html">Über uns</a></li> -->
-                            <li><a href="contact.html">Anfordern</a></li>
-                            <li><a href="location.html">Standort</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        
-        <div class="container">
-            <div class="uberuns">
-                <div class="klarung">
-                    <div>
-                        <h1>Datenschutzerklärung</h1>
-                        <img src="images/boxwiese1.png">
-                        <p>
+          <li><a href="gallery.html">Galerie</a></li>
+
+          <li class="has-submenu">
+            <button class="menu-toggle" type="button" aria-expanded="false">
+              Kontakt <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <ul class="submenu">
+              <li><a href="contact.html">Anfordern</a></li>
+              <li><a href="location.html">Standort</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="content" aria-label="Datenschutzerklärung">
+      <section class="contact" style="max-width: 980px; margin: 0 auto;">
+        <h1>Datenschutzerklärung</h1>
+
+        <img src="images/boxwiese1.png" alt="Lager" style="width:100%; height:auto; border-radius:12px; margin: 12px 0 16px;" />
+
+        <div style="text-align:left; font-size:16px; line-height:1.75; color:#111;">
+<p>
                             <b>1) Information über die Erhebung personenbezogener Daten und Kontaktdaten des Verantwortlichen</b>
                             <br>
                             1.1 Wir freuen uns, dass Sie unsere Website besuchen und bedanken uns für Ihr Interesse. Im Folgenden informieren wir Sie über den Umgang mit Ihren personenbezogenen Daten bei der Nutzung unserer Website. Personenbezogene Daten sind hierbei alle Daten, mit denen Sie persönlich identifiziert werden können.
@@ -154,21 +165,20 @@
                             Bei der Verarbeitung von personenbezogenen Daten zum Zwecke der Direktwerbung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO werden diese Daten so lange gespeichert, bis der Betroffene sein Widerspruchsrecht nach Art. 21 Abs. 2 DSGVO ausübt.
                             Sofern sich aus den sonstigen Informationen dieser Erklärung über spezifische Verarbeitungssituationen nichts anderes ergibt, werden gespeicherte personenbezogene Daten im Übrigen dann gelöscht, wenn sie für die Zwecke, für die sie erhoben oder auf sonstige Weise verarbeitet wurden, nicht mehr notwendig sind.
                         </p>
-                    </div>
-                </div>
-            </div>
-
         </div>
-        <footer class="main-footer">
-            <p>
-                <a href="datenschutzerklarung.html">Datenschutzerklärung</a> -
-                <a href="impressum.html">Impressum</a>
-            </p>
-            <p>copyright 2024 &copy; Mein Lager</p>
-        </footer>
+      </section>
+    </main>
 
-    </div>
+    <footer class="main-footer">
+      <p>
+        <a href="datenschutzerklarung.html" aria-current="page">Datenschutzerklärung</a> -
+        <a href="impressum.html">Impressum</a>
+      </p>
+      <p>copyright 2024 &copy; Mein Lager</p>
+    </footer>
+  </div>
 
+  <script src="script.js"></script>
 </body>
 
 </html>
