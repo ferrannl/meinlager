@@ -1,125 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Ferran Hendriks" />
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Mein Lager | Kontakt</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Ferran Hendriks" />
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>Mein Lager | Kontakt</title>
 </head>
 
 <body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo-min.png" alt="lager logo" /></a>
+      </div>
 
-    <div class="wrapper">
+      <nav class="nav">
+        <input id="check" type="checkbox" aria-label="Toggle menu" />
+        <label for="check" class="menu-handle" aria-label="Open menu" role="button" tabindex="0">
+          <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+        </label>
 
-        <header class="header">
-            <div class="logo"><a href="index.html"><img src="images/logo-min.png" alt="lager logo"></a></div>
-            <nav>
-                <input id="check" type="checkbox">
-                <label for="check" class="menu-handle"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></label>
+        <ul class="menu" id="mainMenu">
+          <li><a href="home.html">Homepage</a></li>
 
-                <ul class="menu">
-                    <li><a href="home.html">Homepage</a></li>
-                    <li><span>Angebot <i class="fa fa-caret-down" aria-hidden="true"></i></span>
-                        <ul class="submenu">
-                            <li><a href="page1.html">Holzboxen</a></li>
-                            <li><a href="page2.html">Containers</a></li>
-                            <li><a href="page3.html">Räume</a></li>
-                            <li><a href="page4.html">Premium Containers</a></li>
-                            <li><a href="page5.html">Alle Lösungen</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="gallery.html">Galerie</a></li>
-                    <li><span>Kontakt <i class="fa fa-caret-down" aria-hidden="true"></i></span>
-                        <ul class="submenu">
-                            <li><a href="contact.html">Anfordern</a></li>
-                            <li><a href="location.html">Standort</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+          <li class="has-submenu">
+            <button class="menu-toggle" type="button" aria-expanded="false">
+              Angebot <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <ul class="submenu">
+              <li><a href="page1.html">Holzboxen</a></li>
+              <li><a href="page2.html">Containers</a></li>
+              <li><a href="page3.html">Räume</a></li>
+              <li><a href="page4.html">Premium Containers</a></li>
+              <li><a href="page5.html">Alle Lösungen</a></li>
+            </ul>
+          </li>
 
-        <div class="container">
-            <div class="contact">
-                <h1>Kontaktieren Sie uns
-                    <br>
-                    Das MeinLager Team freut sich auf Sie!</h1>
+          <li><a href="gallery.html">Galerie</a></li>
 
-               <!-- <form action="https://formsubmit.co/ferranhendriks2@hotmail.com" method="POST" id="contactForm"> -->
-                <form id="contactForm">
-                    <div class="form-section">
-                        <label for="salutation">Anrede:</label>
-                        <select id="salutation" name="salutation" class="form-control">
-                            <option value="man">Herr</option>
-                            <option value="frau">Frau</option>
-                        </select>
-                    </div>
+          <li class="has-submenu">
+            <button class="menu-toggle" type="button" aria-expanded="false">
+              Kontakt <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <ul class="submenu">
+              <li><a href="contact.html" aria-current="page">Anfordern</a></li>
+              <li><a href="location.html">Standort</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-                    <div class="form-section">
-                        <label for="first-name">Vorname:</label>
-                        <input type="text" id="first-name" name="firstname" class="form-control" placeholder="Vorname" required>
-                    </div>
+    <!-- MAIN -->
+    <main class="content" aria-label="Kontakt">
+      <section class="contact">
+        <h1>
+          Kontaktieren Sie uns
+          <br />
+          Das MeinLager Team freut sich auf Sie!
+        </h1>
 
-                    <div class="form-section">
-                        <label for="last-name">Nachname:</label>
-                        <input type="text" id="last-name" name="lastname" class="form-control" placeholder="Nachname" required>
-                    </div>
+        <!-- If you later want formsubmit, restore your action/method -->
+        <!-- <form action="https://formsubmit.co/YOUREMAIL" method="POST" id="contactForm"> -->
+        <form id="contactForm">
+          <div class="form-section">
+            <label for="salutation">Anrede:</label>
+            <select id="salutation" name="salutation" class="form-control">
+              <option value="herr">Herr</option>
+              <option value="frau">Frau</option>
+            </select>
+          </div>
 
-                    <div class="form-section">
-                        <label for="email">E-Mail-Adresse:</label>
-                        <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail-Adresse" required>
-                    </div>
+          <div class="form-section">
+            <label for="first-name">Vorname:</label>
+            <input type="text" id="first-name" name="firstname" class="form-control" placeholder="Vorname" required />
+          </div>
 
-                    <div class="form-section">
-                        <p><strong>Kundenwunsch:</strong></p>
-                        <div class="radio-group">
-                            <label>
-                                <input type="radio" id="angebot" name="kundenwunsch" value="angebot">
-                                Unverbindliches Angebot anfordern
-                            </label>
-                            <label>
-                                <input type="radio" id="vorschlag" name="kundenwunsch" value="vorschlag">
-                                Besichtigungstermin Vorschlag anfordern
-                            </label>
-                        </div>
-                    </div>
+          <div class="form-section">
+            <label for="last-name">Nachname:</label>
+            <input type="text" id="last-name" name="lastname" class="form-control" placeholder="Nachname" required />
+          </div>
 
-                    <div class="form-section">
-                        <label for="message">Nachricht:</label>
-                        <textarea id="message" name="message" class="form-control" placeholder="Ihre Nachricht..." required></textarea>
-                    </div>
+          <div class="form-section">
+            <label for="email">E-Mail-Adresse:</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail-Adresse" required />
+          </div>
 
-                    <div class="form-section">
-                        <button id="submitButton" type="submit" class="submit-btn">Schicken</button>
-                    </div>
-                </form>
+          <div class="form-section">
+            <p><strong>Kundenwunsch:</strong></p>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="kundenwunsch" value="angebot" required />
+                Unverbindliches Angebot anfordern
+              </label>
+              <label>
+                <input type="radio" name="kundenwunsch" value="vorschlag" required />
+                Besichtigungstermin Vorschlag anfordern
+              </label>
             </div>
-        </div>
+          </div>
 
-        <!-- Success Message Modal -->
-        <div id="successModal" class="hidden">
-            <div class="success-container">
-                <h1>Danke!</h1>
-                <p>Ihre Nachricht wurde erfolgreich gesendet.</p>
-                <p>Sie werden in <span id="countdown">15</span> Sekunden zur Startseite weitergeleitet...</p>
-            </div>
-        </div>
+          <div class="form-section">
+            <label for="message">Nachricht:</label>
+            <textarea id="message" name="message" class="form-control" placeholder="Ihre Nachricht..." required></textarea>
+          </div>
 
-        <footer class="main-footer">
-            <p>
-                <a href="datenschutzerklarung.html">Datenschutzerklärung</a> -
-                <a href="impressum.html">Impressum</a>
-            </p>
-            <p>copyright 2024 &copy; Mein Lager</p>
-        </footer>
+          <div class="form-section">
+            <button id="submitButton" type="submit" class="submit-btn">Schicken</button>
+          </div>
+        </form>
+      </section>
+    </main>
 
+    <!-- Success Message Modal -->
+    <div id="successModal" class="hidden" role="dialog" aria-modal="true" aria-label="Erfolg">
+      <div class="success-container">
+        <h1>Danke!</h1>
+        <p>Ihre Nachricht wurde erfolgreich gesendet.</p>
+        <p>Sie werden in <span id="countdown">15</span> Sekunden zur Startseite weitergeleitet...</p>
+      </div>
     </div>
 
-    <script src="script.js"></script>
+    <footer class="main-footer">
+      <p>
+        <a href="datenschutzerklarung.html">Datenschutzerklärung</a> -
+        <a href="impressum.html">Impressum</a>
+      </p>
+      <p>copyright 2024 &copy; Mein Lager</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
