@@ -1,13 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Ferran Hendriks" />
   <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
-  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" href="style.css" />
   <title>Mein Lager | Kontakt</title>
 </head>
 
@@ -18,45 +18,56 @@
         <a href="index.html"><img src="images/logo-min.png" alt="lager logo" /></a>
       </div>
 
-      <nav class="nav">
-        <input id="check" type="checkbox" aria-label="Toggle menu" />
-        <label for="check" class="menu-handle" aria-label="Open menu" role="button" tabindex="0">
+      <!-- ✅ NEW NAV STRUCTURE (matches your current CSS + JS) -->
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">
           <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-        </label>
+          <span class="sr-only">Menu</span>
+        </button>
 
-        <ul class="menu" id="mainMenu">
-          <li><a href="home.html">Homepage</a></li>
+        <div class="nav-panel" id="menu">
+          <ul class="menu">
+            <li class="menu-item">
+              <a href="home.html">Homepage</a>
+            </li>
 
-          <li class="has-submenu">
-            <button class="menu-toggle" type="button" aria-expanded="false">
-              Angebot <i class="fa fa-caret-down" aria-hidden="true"></i>
-            </button>
-            <ul class="submenu">
-              <li><a href="page1.html">Holzboxen</a></li>
-              <li><a href="page2.html">Containers</a></li>
-              <li><a href="page3.html">Räume</a></li>
-              <li><a href="page4.html">Premium Containers</a></li>
-              <li><a href="page5.html">Alle Lösungen</a></li>
-            </ul>
-          </li>
+            <li class="menu-item has-submenu">
+              <button class="submenu-toggle" type="button" aria-expanded="false">
+                Angebot <i class="fa fa-caret-down" aria-hidden="true"></i>
+              </button>
+              <ul class="submenu">
+                <li><a href="page1.html">Holzboxen</a></li>
+                <li><a href="page2.html">Containers</a></li>
+                <li><a href="page3.html">Räume</a></li>
+                <li><a href="page4.html">Premium Containers</a></li>
+                <li><a href="page5.html">Alle Lösungen</a></li>
+              </ul>
+            </li>
 
-          <li><a href="gallery.html">Galerie</a></li>
+            <li class="menu-item">
+              <a href="gallery.html">Galerie</a>
+            </li>
 
-          <li class="has-submenu">
-            <button class="menu-toggle" type="button" aria-expanded="false">
-              Kontakt <i class="fa fa-caret-down" aria-hidden="true"></i>
-            </button>
-            <ul class="submenu">
-              <li><a href="contact.html" aria-current="page">Anfordern</a></li>
-              <li><a href="location.html">Standort</a></li>
-            </ul>
-          </li>
-        </ul>
+            <li class="menu-item has-submenu">
+              <button class="submenu-toggle" type="button" aria-expanded="false">
+                Kontakt <i class="fa fa-caret-down" aria-hidden="true"></i>
+              </button>
+              <ul class="submenu">
+                <li><a href="contact.html" aria-current="page">Anfordern</a></li>
+                <li><a href="location.html">Standort</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <!-- backdrop for mobile -->
+        <div class="nav-backdrop" hidden></div>
       </nav>
     </header>
 
-    <!-- MAIN -->
     <main class="content" aria-label="Kontakt">
+      <!-- ✅ Uses your existing layout grid (.content). This will sit nicely next to the aside on wider screens,
+           and stack on mobile automatically (same as index). -->
       <section class="contact">
         <h1>
           Kontaktieren Sie uns
@@ -64,8 +75,7 @@
           Das MeinLager Team freut sich auf Sie!
         </h1>
 
-        <!-- If you later want formsubmit, restore your action/method -->
-        <!-- <form action="https://formsubmit.co/YOUREMAIL" method="POST" id="contactForm"> -->
+        <!-- Keep your existing JS hook IDs (contactForm, successModal, countdown) -->
         <form id="contactForm">
           <div class="form-section">
             <label for="salutation">Anrede:</label>
@@ -77,17 +87,41 @@
 
           <div class="form-section">
             <label for="first-name">Vorname:</label>
-            <input type="text" id="first-name" name="firstname" class="form-control" placeholder="Vorname" required />
+            <input
+              type="text"
+              id="first-name"
+              name="firstname"
+              class="form-control"
+              placeholder="Vorname"
+              autocomplete="given-name"
+              required
+            />
           </div>
 
           <div class="form-section">
             <label for="last-name">Nachname:</label>
-            <input type="text" id="last-name" name="lastname" class="form-control" placeholder="Nachname" required />
+            <input
+              type="text"
+              id="last-name"
+              name="lastname"
+              class="form-control"
+              placeholder="Nachname"
+              autocomplete="family-name"
+              required
+            />
           </div>
 
           <div class="form-section">
             <label for="email">E-Mail-Adresse:</label>
-            <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail-Adresse" required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="E-Mail-Adresse"
+              autocomplete="email"
+              required
+            />
           </div>
 
           <div class="form-section">
@@ -106,7 +140,13 @@
 
           <div class="form-section">
             <label for="message">Nachricht:</label>
-            <textarea id="message" name="message" class="form-control" placeholder="Ihre Nachricht..." required></textarea>
+            <textarea
+              id="message"
+              name="message"
+              class="form-control"
+              placeholder="Ihre Nachricht..."
+              required
+            ></textarea>
           </div>
 
           <div class="form-section">
@@ -116,7 +156,7 @@
       </section>
     </main>
 
-    <!-- Success Message Modal -->
+    <!-- Success Message Modal (your existing JS expects these IDs) -->
     <div id="successModal" class="hidden" role="dialog" aria-modal="true" aria-label="Erfolg">
       <div class="success-container">
         <h1>Danke!</h1>
@@ -136,5 +176,4 @@
 
   <script src="script.js"></script>
 </body>
-
 </html>
