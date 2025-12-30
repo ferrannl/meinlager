@@ -1,148 +1,184 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="author" content="Ferran Hendriks" />
-  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="style.css" />
-  <title>Mein Lager | Home</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Ferran Hendriks" />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Mein Lager | Home</title>
+  </head>
 
-<body>
-  <!-- PARALLAX (kept) -->
-  <section class="parallax" aria-label="Hero">
-    <img class="hero-logo" src="images/logo-min.png" alt="lager logo">
-    <h1 class="hero-title">
-      <span>Wir schaffen Platz!</span>
-    </h1>
-  </section>
-
-  <div class="wrapper">
-    <header class="header" role="banner">
-      <a class="logo" href="index.html" aria-label="Mein Lager Home">
-        <img src="images/logo-min.png" alt="lager logo">
-      </a>
-
-      <nav class="nav" role="navigation" aria-label="Hauptmenü">
-        <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
-          <i class="fa fa-bars" aria-hidden="true"></i>
-          <span class="sr-only">Menü öffnen</span>
-        </button>
-
-        <ul class="menu" id="navMenu">
-          <li class="menu-item">
-            <a class="menu-link is-primary" href="home.html">Homepage</a>
-          </li>
-
-          <li class="menu-item has-submenu">
-            <button class="menu-link is-yellow submenu-toggle" type="button" aria-expanded="false">
-              Angebot <i class="fa fa-caret-down" aria-hidden="true"></i>
-            </button>
-            <ul class="submenu" aria-label="Angebot Untermenü">
-              <li><a href="page1.html">Holzboxen</a></li>
-              <li><a href="page2.html">Containers</a></li>
-              <li><a href="page3.html">Räume</a></li>
-              <li><a href="page4.html">Premium Containers</a></li>
-              <li><a href="page5.html">Alle Lösungen</a></li>
-            </ul>
-          </li>
-
-          <li class="menu-item">
-            <a class="menu-link is-mint" href="gallery.html">Galerie</a>
-          </li>
-
-          <li class="menu-item has-submenu">
-            <button class="menu-link is-purple submenu-toggle" type="button" aria-expanded="false">
-              Kontakt <i class="fa fa-caret-down" aria-hidden="true"></i>
-            </button>
-            <ul class="submenu" aria-label="Kontakt Untermenü">
-              <li><a href="contact.html">Anfordern</a></li>
-              <li><a href="location.html">Standort</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- MAIN LAYOUT -->
-    <main class="page">
-      <div class="layout">
-        <!-- ASIDE -->
-        <aside class="info card">
-          <img class="info-img" src="images/notice.jpg" alt="Hinweis Öffnungszeiten">
-
-          <div class="info-text">
-            <div><strong>Bitte beachten Sie unsere neuen Öffnungszeiten</strong></div>
-            <div class="spacer"></div>
-            <div><b>ab dem 01.12.2024</b></div>
-            <div class="spacer"></div>
-
-            <div><b>Montags – Freitags</b></div>
-            <div><b>08:30 - 17:00</b></div>
-
-            <div class="spacer"></div>
-
-            <div>Samstags</div>
-            <div>09:00 - 15:00</div>
-          </div>
-
-          <a class="info-link" href="location.html">Klicken Sie hier für weitere Informationen über uns!</a>
-        </aside>
-
-        <!-- CARDS GRID -->
-        <section class="cards" aria-label="Highlights">
-          <article class="feature-card">
-            <div class="feature-text">
-              <p>Günstig, flexibel und schnell. Auch bei individuellen Wünschen stehen wir Ihnen gerne mit Rat und Tat zur Seite. Nutzen Sie unsere umfangreichen Lösungen und profitieren Sie von unseren vielseitigen Serviceleistungen!</p>
-            </div>
-            <img src="images/bild4.png" alt="Service">
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-text">
-              <p>Unsere Einrichtung ist kameraüberwacht und nach neuesten technischen Standards alarmgesichert. Gerne können Sie sich vor Ort einen Eindruck davon verschaffen.</p>
-            </div>
-            <img src="images/bild3.png" alt="Sicherheit">
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-text">
-              <p>Ihr Hab und Gut wird bei uns sicher nach neuesten VdS Standard gelagert. Zudem stellen wir sicher, daß Ihre Güter trocken, sowie frostfrei gelagert sind.</p>
-            </div>
-            <img src="images/bild2.png" alt="Trocken und frostfrei">
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-text">
-              <p>Unser Selfstorage Angebot ist eine kostengünstige und bequeme Lösung, Möbel, Hausrat und Eigentum sicher und trocken einzulagern und sich dadurch wieder Platz zu verschaffen.</p>
-            </div>
-            <img src="images/bild1.png" alt="Selfstorage">
-          </article>
-        </section>
+  <body>
+    <!-- PARALLAX HERO (kept) -->
+    <section class="parallax" aria-label="Hero">
+      <div class="parallax__overlay"></div>
+      <div class="parallax__content">
+        <img class="hero-logo" src="images/logo-min.png" alt="lager logo" />
+        <h1>
+          <span class="hero-line"></span>
+          Wir schaffen Platz !
+        </h1>
       </div>
+    </section>
 
-      <!-- CTA / INTRO -->
-      <section class="container2 card">
-        <h1>Benötigen Sie Lagerraum oder Lagerfläche?</h1>
-        <p>Den können Sie bei uns einfach mieten.</p>
+    <div class="wrapper">
+      <!-- HEADER / NAV -->
+      <header class="header">
+        <div class="logo">
+          <a href="index.html" aria-label="Zur Startseite">
+            <img src="images/logo-min.png" alt="lager logo" />
+          </a>
+        </div>
+
+        <nav class="nav" aria-label="Hauptnavigation">
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mainMenu"
+          >
+            <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+            <span class="sr-only">Menü öffnen</span>
+          </button>
+
+          <ul class="menu" id="mainMenu">
+            <li class="menu__item">
+              <a class="menu__link" href="home.html">Homepage</a>
+            </li>
+
+            <li class="menu__item has-submenu">
+              <button class="submenu-toggle" type="button" aria-expanded="false">
+                Angebot <i class="fa fa-caret-down" aria-hidden="true"></i>
+              </button>
+              <ul class="submenu" aria-label="Angebot Untermenü">
+                <li><a href="page1.html">Holzboxen</a></li>
+                <li><a href="page2.html">Containers</a></li>
+                <li><a href="page3.html">Räume</a></li>
+                <li><a href="page4.html">Premium Containers</a></li>
+                <li><a href="page5.html">Alle Lösungen</a></li>
+              </ul>
+            </li>
+
+            <li class="menu__item">
+              <a class="menu__link" href="gallery.html">Galerie</a>
+            </li>
+
+            <li class="menu__item has-submenu">
+              <button class="submenu-toggle" type="button" aria-expanded="false">
+                Kontakt <i class="fa fa-caret-down" aria-hidden="true"></i>
+              </button>
+              <ul class="submenu" aria-label="Kontakt Untermenü">
+                <li><a href="contact.html">Anfordern</a></li>
+                <li><a href="location.html">Standort</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- MAIN CONTENT -->
+      <main class="page">
+        <div class="layout">
+          <!-- ASIDE -->
+          <aside class="info">
+            <img src="images/notice.jpg" alt="Hinweis" />
+            <div class="info__text">
+              <div>Bitte beachten Sie unsere neuen Öffnungszeiten</div>
+              <div>&nbsp;</div>
+              <div><b>ab dem 01.12.2024</b></div>
+              <div>&nbsp;</div>
+              <div><b>Montags – Freitags</b></div>
+              <div><b>08:30 -17:00</b></div>
+              <div>&nbsp;</div>
+              <div>Samstags</div>
+              <div>09:00 -15:00</div>
+            </div>
+
+            <a class="info__link" href="location.html"
+              >Klicken Sie hier für weitere Informationen über uns!</a
+            >
+          </aside>
+
+          <!-- CARDS -->
+          <section class="cards" aria-label="Highlights">
+            <div class="gallery">
+              <article class="card">
+                <div class="card__media">
+                  <img src="images/bild4.png" alt="Serviceleistungen" />
+                </div>
+                <div class="card__content">
+                  <p>
+                    Günstig, flexibel und schnell. Auch bei individuellen Wünschen
+                    stehen wir Ihnen gerne mit Rat und Tat zur Seite. Nutzen Sie
+                    unsere umfangreichen Lösungen und profitieren Sie von unseren
+                    vielseitigen Serviceleistungen!
+                  </p>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__media">
+                  <img src="images/bild3.png" alt="Sicherheit" />
+                </div>
+                <div class="card__content">
+                  <p>
+                    Unsere Einrichtung ist kameraüberwacht und nach neusten
+                    technischen Standards alarmgesichert. Gerne können Sie sich
+                    vor Ort einen Eindruck davon verschaffen.
+                  </p>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__media">
+                  <img src="images/bild2.png" alt="Trocken & frostfrei" />
+                </div>
+                <div class="card__content">
+                  <p>
+                    Ihr Hab und Gut wird bei uns sicher nach neusten VdS Standard
+                    gelagert. Zudem stellen wir sicher, daß Ihre Güter trocken,
+                    sowie frostfrei gelagert sind.
+                  </p>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__media">
+                  <img src="images/bild1.png" alt="Selfstorage" />
+                </div>
+                <div class="card__content">
+                  <p>
+                    Unser Selfstorage Angebot ist eine kostengünstige und bequeme
+                    Lösung, Möbel, Hausrat und Eigentum sicher und trocken
+                    einzulagern und sich dadurch wieder Platz zu verschaffen.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <section class="container2">
+          <h1>Benötigen Sie Lagerraum oder Lagerfläche?</h1>
+          <p>Den können Sie bei uns einfach mieten.</p>
+          <p>
+            Wir bieten schnelle Abhilfe bei Platzproblemen! Für private oder
+            gewerbliche Kunden, haben wir den passenden Lagerraum oder Lagerfläche.
+          </p>
+        </section>
+      </main>
+
+      <footer class="main-footer">
         <p>
-          Wir bieten schnelle Abhilfe bei Platzproblemen! Für private oder gewerbliche Kunden,
-          haben wir den passenden Lagerraum oder Lagerfläche.
+          <a href="datenschutzerklarung.html">Datenschutzerklärung</a> -
+          <a href="impressum.html">Impressum</a>
         </p>
-      </section>
-    </main>
+        <p>copyright 2024 &copy; Mein Lager</p>
+      </footer>
+    </div>
 
-    <footer class="main-footer">
-      <p>
-        <a href="datenschutzerklarung.html">Datenschutzerklärung</a> -
-        <a href="impressum.html">Impressum</a>
-      </p>
-      <p>copyright 2024 &copy; Mein Lager</p>
-    </footer>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
