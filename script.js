@@ -1,106 +1,61 @@
-// ==========================
-// NAV (hamburger + submenu)
-// ==========================
-(function () {
-  const check = document.getElementById("check");
-  const menu = document.getElementById("mainMenu");
+// --- HAMBURGER + SUBMENU FIXES ---
 
-  if (!check || !menu) return;
+const menuCheckbox = document.getElementById("check");
+const menu = document.getElementById("mainMenu");
+const toggles = document.querySelectorAll(".menu-toggle");
 
-  const isDesktop = () => window.matchMedia("(min-width: 480px)").matches;
+// Helper: close all submenus
+function closeAllSubmenus() {
+  document.querySelectorAll(".has-submenu").forEach((li) => {
+    li.classList.remove("open");
+    const btn = li.querySelector(".menu-toggle");
+    if (btn) btn.setAttribute("aria-expanded", "false");
+  });
+}
 
-  const closeAllSubmenus = () => {
-    menu.querySelectorAll(".has-submenu").forEach((li) => {
-      li.classList.remove("open");
-      const btn = li.querySelector(".menu-btn");
-      if (btn) btn.setAttribute("aria-expanded", "false");
-    });
-  };
+// Toggle submenu on click (mobile behavior)
+toggles.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    // On wide screens we let CSS hover handle it
+    if (window.matchMedia("(min-width: 700px)").matches) return;
 
-  const closeMenu = () => {
-    check.checked = false;
+    const parent = btn.closest(".has-submenu");
+    const isOpen = parent.classList.contains("open");
+
     closeAllSubmenus();
-  };
-
-  // Toggle submenu on click (mobile + desktop)
-  menu.querySelectorAll(".has-submenu > .menu-btn").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-
-      const li = btn.closest(".has-submenu");
-      const isOpen = li.classList.contains("open");
-
-      // close others first
-      closeAllSubmenus();
-
-      // toggle this one
-      if (!isOpen) {
-        li.classList.add("open");
-        btn.setAttribute("aria-expanded", "true");
-      } else {
-        li.classList.remove("open");
-        btn.setAttribute("aria-expanded", "false");
-      }
-    });
+    parent.classList.toggle("open", !isOpen);
+    btn.setAttribute("aria-expanded", String(!isOpen));
   });
+});
 
-  // Close menu when clicking any normal link (mobile)
-  menu.querySelectorAll("a").forEach((a) => {
-    a.addEventListener("click", () => {
-      if (!isDesktop()) closeMenu();
-    });
-  });
+// Close hamburger menu when clicking a link
+menu.addEventListener("click", (e) => {
+  const a = e.target.closest("a");
+  if (!a) return;
 
-  // Clicking outside closes menu (mobile)
-  document.addEventListener("click", (e) => {
-    if (isDesktop()) return;
-    if (!check.checked) return;
+  // close mobile menu
+  if (!window.matchMedia("(min-width: 700px)").matches) {
+    menuCheckbox.checked = false;
+    closeAllSubmenus();
+  }
+});
 
-    const nav = menu.closest("nav");
-    if (nav && !nav.contains(e.target)) closeMenu();
-  });
+// Clicking outside menu closes it (mobile)
+document.addEventListener("click", (e) => {
+  if (window.matchMedia("(min-width: 700px)").matches) return;
 
-  // Esc closes menu (mobile)
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && check.checked) closeMenu();
-  });
+  const nav = e.target.closest(".nav");
+  if (!nav && menuCheckbox.checked) {
+    menuCheckbox.checked = false;
+    closeAllSubmenus();
+  }
+});
 
-  // When switching to desktop, clean state
-  window.addEventListener("resize", () => {
-    if (isDesktop()) {
-      check.checked = false;
-      closeAllSubmenus();
-    }
-  });
-})();
-
-// ==========================
-// CONTACT FORM MODAL (safe)
-// ==========================
-(function () {
-  const form = document.getElementById("contactForm");
-  const successModal = document.getElementById("successModal");
-  const countdownElement = document.getElementById("countdown");
-
-  if (!form || !successModal || !countdownElement) return;
-
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    successModal.classList.remove("hidden");
-
-    let countdown = 15;
-    countdownElement.textContent = countdown;
-
-    const timer = setInterval(() => {
-      countdown--;
-      countdownElement.textContent = countdown;
-
-      if (countdown <= 0) {
-        clearInterval(timer);
-        window.location.href = "index.html";
-      }
-    }, 1000);
-  });
-})();
+// When switching to desktop/tablet, clean mobile states
+window.addEventListener("resize", () => {
+  if (window.matchMedia("(min-width: 700px)").matches) {
+    // ensure checkbox doesn't keep menu "stuck"
+    menuCheckbox.checked = false;
+    closeAllSubmenus();
+  }
+});
